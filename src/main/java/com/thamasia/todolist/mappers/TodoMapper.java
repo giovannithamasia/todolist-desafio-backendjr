@@ -1,7 +1,7 @@
 package com.thamasia.todolist.mappers;
 
-import com.thamasia.todolist.dtos.TodoRequestDto;
-import com.thamasia.todolist.dtos.TodoResponseDto;
+import com.thamasia.todolist.dto.TodoDto;
+import com.thamasia.todolist.dto.TodoRespostaDto;
 import com.thamasia.todolist.model.Todo;
 import org.mapstruct.Mapper;
 
@@ -10,9 +10,9 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface TodoMapper {
 
-    Todo toEntity(TodoRequestDto dto);
+    Todo toEntity(TodoDto dto);
 
-    TodoResponseDto toDto(Todo todo);
+    TodoRespostaDto toDto(Todo todo);
 
-    List<TodoResponseDto> toDtoList (List<Todo> todos);
+    List<TodoRespostaDto> toDtoList (List<Todo> todos);
 }
