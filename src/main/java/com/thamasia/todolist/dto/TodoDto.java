@@ -18,7 +18,6 @@ public record TodoDto(
         Boolean realizado,
 
         @NotNull(message = "prioridade não pode ser nula")
-        @Size(max = 10,message = "prioridade não pode ultrapassar 10 caracteres")
         Prioridade prioridade
 ){
 }
