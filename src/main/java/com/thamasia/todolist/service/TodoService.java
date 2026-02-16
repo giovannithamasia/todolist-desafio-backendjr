@@ -1,6 +1,8 @@
 package com.thamasia.todolist.service;
 
 import com.thamasia.todolist.dto.TodoDto;
+import com.thamasia.todolist.dto.TodoRespostaDto;
+import com.thamasia.todolist.exceptions.TarefaNaoEncontradaException;
 import com.thamasia.todolist.mappers.TodoMapper;
 import com.thamasia.todolist.model.Todo;
 import com.thamasia.todolist.repository.TodoRepository;
@@ -21,5 +23,12 @@ public class TodoService {
     @Transactional
     public Todo cadastrarTarefa(TodoDto dto){
         return repository.save(mapper.toEntity(dto));
+    }
+
+    public TodoRespostaDto buscarTarefaPorID(Long id){
+        Todo todo = repository.findById(id).orElseThrow(() ->
+                new TarefaNaoEncontradaException("Tarefa não encontrada"));
+
+        return mapper.toDto(todo);
     }
 }
