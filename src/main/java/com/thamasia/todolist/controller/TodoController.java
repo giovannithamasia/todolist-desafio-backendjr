@@ -44,4 +44,11 @@ public class TodoController {
     public ResponseEntity<List<TodoRespostaDto>> listar(){
         return ResponseEntity.ok(service.listarTarefas());
     }
+
+    @PutMapping("{id}")
+    public ResponseEntity<Void> atualizar(@PathVariable("id") Long id,
+                                          @RequestBody @Valid TodoDto dto){
+        service.atualizarTarefa(id,dto);
+        return ResponseEntity.noContent().build();
+    }
 }

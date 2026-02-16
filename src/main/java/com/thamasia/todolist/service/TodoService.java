@@ -37,4 +37,16 @@ public class TodoService {
     public List<TodoRespostaDto> listarTarefas(){
         return mapper.toDtoList(repository.findAll());
     }
+
+    public void atualizarTarefa(Long id,TodoDto dto){
+        Todo todo = repository.findById(id).orElseThrow(() ->
+                new TarefaNaoEncontradaException("Tarefa não encontrada"));
+
+        todo.setNome(dto.nome());
+        todo.setDescricao(dto.descricao());
+        todo.setPrioridade(dto.prioridade());
+        todo.setRealizado(dto.realizado());
+
+        repository.save(todo);
+    }
 }
