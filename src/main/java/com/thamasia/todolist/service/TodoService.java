@@ -9,6 +9,8 @@ import com.thamasia.todolist.repository.TodoRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class TodoService {
 
@@ -30,5 +32,9 @@ public class TodoService {
                 new TarefaNaoEncontradaException("Tarefa não encontrada"));
 
         return mapper.toDto(todo);
+    }
+
+    public List<TodoRespostaDto> listarTarefas(){
+        return mapper.toDtoList(repository.findAll());
     }
 }

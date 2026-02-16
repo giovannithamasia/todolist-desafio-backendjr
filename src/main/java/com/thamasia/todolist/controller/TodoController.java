@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping("todos")
@@ -37,5 +38,10 @@ public class TodoController {
     @GetMapping("{id}")
     public ResponseEntity<TodoRespostaDto> buscarTarefa(@PathVariable("id") Long id){
         return ResponseEntity.ok(service.buscarTarefaPorID(id));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<TodoRespostaDto>> listar(){
+        return ResponseEntity.ok(service.listarTarefas());
     }
 }
