@@ -51,4 +51,10 @@ public class TodoController {
         service.atualizarTarefa(id,dto);
         return ResponseEntity.noContent().build();
     }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<Void> deletar(@PathVariable("id") Long id){
+        service.deletarTarefa(id);
+        return ResponseEntity.noContent().build();
+    }
 }

@@ -49,4 +49,11 @@ public class TodoService {
 
         repository.save(todo);
     }
+
+    public void deletarTarefa(Long id){
+         repository.findById(id).orElseThrow(() ->
+                new TarefaNaoEncontradaException("Tarefa não encontrada"));
+
+        repository.deleteById(id);
+    }
 }
