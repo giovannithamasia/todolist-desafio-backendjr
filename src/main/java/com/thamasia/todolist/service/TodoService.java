@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class TodoService {
 
     private final TodoRepository repository;
@@ -22,7 +23,6 @@ public class TodoService {
         this.mapper = mapper;
     }
 
-    @Transactional
     public Todo cadastrarTarefa(TodoDto dto){
         return repository.save(mapper.toEntity(dto));
     }
