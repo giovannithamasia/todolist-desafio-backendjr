@@ -4,5 +4,8 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/todolist
     username: postgres
-    password: postgres
+    password: user22
     driver-class-name: org.postgresql.Driver
+springdoc:
+    api-docs:
+      version: openapi_3_0
