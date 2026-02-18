@@ -1,4 +1,4 @@
-package com.thamasia.todolist.mappers;
+package com.thamasia.todolist.controller.mappers;
 
 import com.thamasia.todolist.dto.TodoDto;
 import com.thamasia.todolist.dto.TodoRespostaDto;

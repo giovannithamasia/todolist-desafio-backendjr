@@ -11,6 +11,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -20,13 +21,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("todos")
+@RequiredArgsConstructor
 public class TodoController {
 
     private final TodoService service;
-
-    public TodoController(TodoService service) {
-        this.service = service;
-    }
 
     @PostMapping
     @Operation(description = "Cadastrar a tarefa")
