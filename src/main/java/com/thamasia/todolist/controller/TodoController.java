@@ -57,6 +57,7 @@ public class TodoController {
             @ApiResponse(responseCode = "200",
                     description = "retorna a tarefa encontrada pelo id"),
             @ApiResponse(responseCode = "404",
+                    description = "A tarefa não foi encontrada com id informado",
                     content = {
                             @Content
                                     (mediaType = "application/json",
