@@ -11,7 +11,4 @@ public record ErroResposta(int status, String mensagem, List<ErroCampo> erros) {
     public static ErroResposta naoEncontrado(String mensagem){
         return new ErroResposta(HttpStatus.NOT_FOUND.value(),mensagem,List.of());
     }
-    public static ErroResposta erroInternoServidor(String mensagem){
-        return new ErroResposta(HttpStatus.INTERNAL_SERVER_ERROR.value(),mensagem,List.of());
-    }
 }

@@ -40,10 +40,10 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErroResposta> handleException(Exception e){
-        ErroResposta erro = ErroResposta.erroInternoServidor
-                ("Erro interno do servidor");
-
-        return ResponseEntity.status(erro.status()).body(erro);
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public ErroResposta handleException(Exception e){
+        return new ErroResposta(HttpStatus.INTERNAL_SERVER_ERROR.value(),
+                "Ocorreu um erro inesperado.Entre em contato com a administração",
+                List.of());
     }
 }
