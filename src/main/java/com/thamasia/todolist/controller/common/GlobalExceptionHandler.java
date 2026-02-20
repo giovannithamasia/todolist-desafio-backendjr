@@ -4,7 +4,6 @@ import com.thamasia.todolist.dto.ErroCampo;
 import com.thamasia.todolist.dto.ErroResposta;
 import com.thamasia.todolist.exceptions.TarefaNaoEncontradaException;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -34,9 +33,9 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(TarefaNaoEncontradaException.class)
-    public ResponseEntity<ErroResposta> handleTarefaNaoEncontradaException(TarefaNaoEncontradaException e){
-        ErroResposta erro = ErroResposta.naoEncontrado(e.getMessage());
-        return ResponseEntity.status(erro.status()).body(erro);
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ErroResposta handleTarefaNaoEncontradaException(TarefaNaoEncontradaException e){
+        return ErroResposta.naoEncontrado(e.getMessage());
     }
 
     @ExceptionHandler(Exception.class)
