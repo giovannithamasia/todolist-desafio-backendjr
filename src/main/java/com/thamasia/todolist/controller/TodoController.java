@@ -44,7 +44,7 @@ public class TodoController {
 
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest()
-                .path("{id}")
+                .path("/{id}")
                 .buildAndExpand(todo.getId())
                 .toUri();
 
