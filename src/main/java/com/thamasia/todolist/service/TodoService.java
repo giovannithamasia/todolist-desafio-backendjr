@@ -3,7 +3,7 @@ package com.thamasia.todolist.service;
 import com.thamasia.todolist.dto.TodoDto;
 import com.thamasia.todolist.dto.TodoRespostaDto;
 import com.thamasia.todolist.exceptions.TarefaNaoEncontradaException;
-import com.thamasia.todolist.controller.mappers.TodoMapper;
+import com.thamasia.todolist.mappers.TodoMapper;
 import com.thamasia.todolist.model.Todo;
 import com.thamasia.todolist.repository.TodoRepository;
 import lombok.RequiredArgsConstructor;
@@ -13,13 +13,13 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-@Transactional
 @RequiredArgsConstructor
 public class TodoService {
 
     private final TodoRepository repository;
     private final TodoMapper mapper;
 
+    @Transactional
     public Todo cadastrarTarefa(TodoDto dto){
         return repository.save(mapper.toEntity(dto));
     }
@@ -35,6 +35,7 @@ public class TodoService {
         return mapper.toDtoList(repository.findAll());
     }
 
+    @Transactional
     public void atualizarTarefa(Long id,TodoDto dto){
         Todo todo = repository.findById(id).orElseThrow(() ->
                 new TarefaNaoEncontradaException("Tarefa não encontrada"));
@@ -47,6 +48,7 @@ public class TodoService {
         repository.save(todo);
     }
 
+    @Transactional
     public void deletarTarefa(Long id){
          repository.findById(id).orElseThrow(() ->
                 new TarefaNaoEncontradaException("Tarefa não encontrada"));
