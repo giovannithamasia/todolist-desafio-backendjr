@@ -2,8 +2,8 @@ package com.thamasia.todolist.service;
 
 import com.thamasia.todolist.dto.TodoDto;
 import com.thamasia.todolist.dto.TodoRespostaDto;
-import com.thamasia.todolist.exceptions.TarefaNaoEncontradaException;
-import com.thamasia.todolist.mappers.TodoMapper;
+import com.thamasia.todolist.exception.TarefaNaoEncontradaException;
+import com.thamasia.todolist.mapper.TodoMapper;
 import com.thamasia.todolist.model.Todo;
 import com.thamasia.todolist.repository.TodoRepository;
 import lombok.RequiredArgsConstructor;

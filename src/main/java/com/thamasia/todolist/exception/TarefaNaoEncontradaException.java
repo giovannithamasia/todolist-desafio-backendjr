@@ -1,4 +1,4 @@
-package com.thamasia.todolist.exceptions;
+package com.thamasia.todolist.exception;
 
 public class TarefaNaoEncontradaException extends RuntimeException {
 

@@ -1,8 +1,7 @@
-package com.thamasia.todolist.controller.common;
+package com.thamasia.todolist.exception;
 
 import com.thamasia.todolist.dto.ErroCampo;
 import com.thamasia.todolist.dto.ErroResposta;
-import com.thamasia.todolist.exceptions.TarefaNaoEncontradaException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
