@@ -1,6 +1,6 @@
 package com.thamasia.todolist.controller;
 
-import com.thamasia.todolist.dto.ErroResposta;
+import com.thamasia.todolist.exception.ErroResposta;
 import com.thamasia.todolist.dto.TodoDto;
 import com.thamasia.todolist.dto.TodoRespostaDto;
 import com.thamasia.todolist.model.Todo;

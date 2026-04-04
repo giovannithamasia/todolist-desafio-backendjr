@@ -1,4 +1,4 @@
-package com.thamasia.todolist.dto;
+package com.thamasia.todolist.exception;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import org.springframework.http.HttpStatus;
