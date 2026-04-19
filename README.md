@@ -32,6 +32,21 @@ API para gerenciar tarefas (CRUD) que faz parte [desse desafio](https://github.c
 
 ---
 
+## ⚙️ Pré-requisitos e Configuração
+
+Este projeto utiliza o PostgreSQL. Antes de executar, você precisa:
+
+1. Ter o PostgreSQL rodando localmente na porta `5432`.
+2. Criar um banco de dados vazio com o nome `todolist` (o Flyway se encarregará de criar as tabelas).
+3. Configurar as seguintes **variáveis de ambiente** na sua máquina ou na sua IDE de preferência:
+
+| Variável | Descrição | Exemplo |
+| :--- | :--- | :--- |
+| `DATABASE_USERNAME` | Seu usuário do PostgreSQL | `postgres` |
+| `DATABASE_PASSWORD` | Sua senha do PostgreSQL | `123456` |
+
+---
+
 ## Como Executar
 
 - Clonar repositório git   
